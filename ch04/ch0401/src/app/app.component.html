@@ -55,3 +55,50 @@
 <div [ngClass]="{bordered:!isBordered}">无边框</div>
 <div [ngClass]="['bordered','blue','round']">另一种</div>
 <a class="btn btn-primary" href="#" (click)="toggleBorder()">切换边框</a>
+
+<h3>使用ngFor指令</h3>
+<ul>
+  <li *ngFor='let city of cities'>{{city}}</li>
+</ul>
+
+<h4>表格案例</h4>
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">名字</th>
+      <th scope="col">年龄</th>
+      <th scope="col">城市</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of people;let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{p.name}}</td>
+      <td>{{p.age}}</td>
+      <td>{{p.city}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>表格案例2</h4>
+<div *ngFor="let p of peopleByCity">
+  <h2>{{p.city}}</h2>
+
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">名字</th>
+        <th scope="col">年龄</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p2 of p.people;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{p2.name}}</td>
+        <td>{{p2.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

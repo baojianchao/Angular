@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <link rel="stylesheet" href="../denglu.css">
+    <script>
+        var xmlHttp = null;
+        const frm = {
+            iptUserName: null,
+            iptPassword: null,
+            pUserNameErr: null,
+            pPasswordErr: null,
+            pFrmErr: null
+        };
+
+
+        function onResponse() {
+            if (xmlHttp.readyState == 4) {
+                if (xmlHttp.status == 200) {
+                    const resp = xmlHttp.responseText;
+                    console.log(resp);
+                    const obj = JSON.parse(resp);
+                    if (obj.success) {
+                        console.log('登录成功！');
+                        //const page = document.getElementsByClassName('page');
+                        //page[0].className = 'page login-page hide';
+                        //page[1].className = 'page';
+                        window.location.href = "https://www.baidu.com";
+                    } else {
+                        frm.pFrmErr.innerText = '错误的用户名或者密码';
+                    }
+                }
+
+            } else {
+                frm.pFrmErr.innerText = '服务器无响应';
+            }
+
+        }
+
+
+        function sendLogin(name, password) {
+            xmlHttp.onreadystatechange = onResponse;
+            xmlHttp.open('POST', 'http://127.0.0.1:8080/user', true);
+            xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlHttp.send('name=' + name + '&password=' + password);
+        }
+
+        function onLogin() {
+            frm.pUserNameErr.innerText = '';
+            frm.pPasswordErr.innerText = '';
+            frm.pFrmErr.innerText = '';
+
+            const userName = frm.iptUserName.value;
+            let fmt = true;
+            console.log(userName);
+
+            if (userName.trim().length <= 0) {
+                frm.pUserNameErr.innerText = "用户名不能为空";
+                fmt = false;
+            }
+            else if (userName.trim().length < 3) {
+                frm.pUserNameErr.innerText = "用户名长度不能少于3位";
+                fmt = false;
+            }
+
+            const password = frm.iptPassword.value;
+            if (password.trim().length <= 0) {
+                frm.pPasswordErr.innerText = "密码不能为空";
+                fmt = false;
+            } else if (password.trim().length < 6) {
+                frm.pPasswordErr.innerText = "密码不能小于6位";
+                fmt = false;
+            }
+
+            if (!fmt) {
+                return;
+            } else {
+                sendLogin(userName.trim(), password.trim());
+                /*if (userName === 'admin' && password === '123456') {
+                    window.location.href = 'https://www.baidu.com';
+                } else {
+                    frm.pFrmErr.innerText = '用户名或密码错误';
+                }*/
+
+            }
+        }
+
+        function onFocusAndInput(evt) {
+            const obj = evt.target;
+            frm.pFrmErr.innerText = '';
+            if (obj === frm.iptUserName) {
+                frm.pUserNameErr.innerText = '';
+                const userName = frm.iptUserName.value;
+
+                console.log(userName);
+                if (userName.trim().length <= 0) {
+                    frm.pUserNameErr.innerText = "用户名不能为空";
+                    obj.className = 'ipt-error';
+                } else if (userName.trim().length < 3) {
+                    frm.pUserNameErr.innerText = "用户名长度不能少于3位";
+                    obj.className = 'ipt-error';
+                } else {
+                    obj.className = '';
+                }
+
+            }
+
+        }
+        function onFocusAndInput1(evt) {
+            const obj = evt.target;
+            frm.pFrmErr.innerText = '';
+            if (obj === frm.iptPassword) {
+                frm.pPasswordErr.innerText = '';
+                const password = frm.iptPassword.value;
+
+                console.log(password);
+                if (password.trim().length <= 0) {
+                    frm.pPasswordErr.innerText = "密码不能为空";
+                    obj.className = 'ipt-error';
+                } else if (password.trim().length < 6) {
+                    frm.pPasswordErr.innerText = "密码长度不能少于6位";
+                    obj.className = 'ipt-error';
+                } else {
+                    obj.className = '';
+                }
+            }
+        }
+
+
+
+
+
+        window.onload = function () {
+            const btnLogin = document.getElementById('btnLogin')
+            btnLogin.addEventListener('click', function (evt) {
+                onLogin();
+                evt.returnValue = false;
+            });
+
+            frm.iptUserName = document.getElementById('userName');
+            frm.iptUserName.addEventListener('focus', function (evt) {
+                onFocusAndInput(evt);
+            });
+            frm.iptUserName.addEventListener('input', function (evt) {
+                onFocusAndInput(evt);
+            });
+
+            frm.iptPassword = document.getElementById('password');
+            frm.iptPassword.addEventListener('focus', function (evt) {
+                onFocusAndInput1(evt);
+            });
+            frm.iptPassword.addEventListener('input', function (evt) {
+                onFocusAndInput1(evt);
+            });
+
+
+            frm.iptUserName = document.getElementById('userName');
+            frm.iptPassword = document.getElementById('password');
+            frm.pUserNameErr = document.getElementById('userNameErr');
+            frm.pPasswordErr = document.getElementById('passwordErr');
+            frm.pFrmErr = document.getElementById('frmErr');
+
+
+            xmlHttp = new XMLHttpRequest();
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <img src="./img/close.png" class="close" width="60px" height="50px">
+        <img src="./img/82e52276c690045237e855ce6c667799_2_2_photo.jpg" class="touxiang" width="80px" ; height="80px" ;>
+        <img src="./img/Aurora-4k.jpg" class="tupian" width="600px" ; height="300px">
+        <form action="">
+            <p id="frmErr" class="error"></p>
+            <div>
+                <p id="userNameErr" class="error"></p>
+                <label for="userName">用户名</label>
+                <img src="./img/user.png." class="xtp">
+                <input type="text" name="userName" id="userName">
+            </div>
+            <div>
+                <p id="passwordErr" class="error"></p>
+                <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                <img src="./img/lock.png" class="xtp">
+                <input type="password" name="password" id="password">
+            </div>
+
+            <button id="btnLogin">登录</button>
+            <div>
+                <input name='jzmm' type="checkbox" style="width:15px; height:15px; " /><label>记住密码</label>
+            </div>
+            <a href="./zhuce.html">立即注册</a>
+            <a href="./zhuce.html">立即体验</a>
+            <a href="./zhuce.html">找回密码</a>
+            <div>
+                <h5 conter>----或者----</h5>
+            </div>
+            <img src="./img/social_twitter.png" width="50px" ; height="50px" ;>
+            <img src="./img/dingtalk.png" width="50px" ; height="50px" ;>
+            <img src="./img/social_wechat.png" width="50px" ; height="50px" ;>
+
+
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

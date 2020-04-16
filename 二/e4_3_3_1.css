@@ -1,0 +1,98 @@
+html body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page{
+    background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583395924419&di=0d461638400bbea5c6d71f935298ed6f&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201804%2F02%2F105330wi7sbssuswpwukgr.jpg');
+    background-size: 100%;
+}
+
+form{
+    border: 1px solid blue;
+    width: 35rem;
+    height: 24rem;
+    text-align: center;
+    font-size: 1.1rem;
+    border-radius: 17px;
+    padding: 1rem;
+    background: white;
+    opacity: .8;
+
+}
+
+form input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    height: 2rem;
+    width: 80%;
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.8rem -1.5rem ;
+    opacity: 0.5;
+    padding: 0 0 0 1.5rem;
+}
+
+form input:focus{
+    outline: none;
+    border-bottom: 1px solid darkcyan;
+}
+
+form:hover{
+    box-shadow: 0px 0px 3px 3px lightgray;
+}
+
+.ipt-icon{
+    height: 1.2rem;
+    margin: 0 0 0 1rem;
+}
+
+form p{
+    font-size: .8rem;
+    height: .9rem;
+    text-align: left;
+    margin: .5rem 0;
+
+
+}
+
+form button{
+    width: 98%;
+    height: 3rem;
+    border-radius: 8px;
+    background: palevioletred;
+    font-size: 1rem;
+    color: papayawhip;
+    margin: 2.5rem 0 2.5rem 0;
+
+}
+
+button:focus{
+    outline: none;
+    border: 1px solid greenyellow;
+}
+
+.logo{
+    height: 6rem;
+}
+
+.error{
+    color: red;
+}
+
+.ipt-error{
+    border-bottom: 1px solid red;
+}
+
+.hide{
+    display:none;
+}

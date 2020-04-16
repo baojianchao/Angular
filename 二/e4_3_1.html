@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>必胜客点餐</title>
+    <style>
+        html {
+            font-size: 12px;
+            padding: 0 10vw;
+            margin: 0;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            height: 8em;
+            display: table;
+        }
+
+        .header-cell {
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .header-menu {
+            font-size: 2rem;
+        }
+
+        div.header-menu:hover {
+            cursor: pointer;
+            border-top: 5px solid red;
+            color: red;
+        }
+
+        .main {
+            height: calc(100vh - 8em);
+            display: table;
+        }
+
+        .nav {
+            display: table-cell;
+            width: 15em;
+            height: 100%;
+            background: #F9F6F0;
+        }
+
+        .content {
+            display: table-cell;
+            width: calc(80vw - 15em);
+            height: 100%;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+            margin: 10px 5px;
+            font-size: 1.5rem;
+            text-align: right;
+        }
+
+        li:hover {
+            color: red;
+            border-bottom: 1px solid red;
+            cursor: pointer;
+        }
+
+        .leixing {
+            display: table;
+            padding-top: 3em;
+            width: 75em;
+        }
+
+        .i {
+            text-decoration: none;
+            border: 1px solid #14e66cf1;
+            border-radius: 99px;
+            padding: 2px 8px;
+            margin-right: 1rem;
+            color: #14e66cf1;
+        }
+
+        .i:hover {
+            text-decoration: none;
+            background-color: #14e66cf1;
+            border: 1px solid #14e66cf1;
+            border-radius: 99px;
+            padding: 2px 8px;
+            margin-right: 1rem;
+            color: white;
+        }
+
+        .buxian {
+            text-decoration: none;
+            background-color: #e61414f1;
+            border: 1px solid red;
+            border-radius: 100px;
+            padding: 14px 10px;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: white;
+        }
+
+        .leixingchicun {
+            text-decoration: none;
+            background-color: #ffffff;
+            border: 1px solid rgba(122, 115, 115, 0.651);
+            border-radius: 100px;
+            padding: 14px 10px;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: black;
+        }
+
+        .leixingchicun:hover {
+            border: 1px solid red;
+            background-color: red;
+            color: white;
+        }
+
+        .pisa {
+            width: 90rem;
+            height: 20rem;
+        }
+
+        .pisa-cell {
+            top: 2rem;
+            position: relative;
+            float: left;
+            height: 30rem;
+            margin: 0;
+            width: 17.5rem;
+            border: 1px solid rgb(202, 199, 199);
+            cursor: pointer;
+        }
+
+        .pisa-cell-img {
+            position: absolute;
+            top: 1rem;
+            left: 2.5rem;
+            right: 2.5rem;
+            bottom: 7rem;
+        }
+
+        .pisa-cell-desc {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10rem;
+            height: 3rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .pisa-cell-bnt {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3rem;
+            text-align: center;
+        }
+
+        .pisa-cell:hover {
+            box-shadow: 0px 3px 3px 3px lightgrey;
+        }
+
+        .button {
+            text-decoration: none;
+            background-color: rgb(31, 184, 31);
+            border-radius: 5px;
+            padding: 5px 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div style="width: 20vw;" class="header-cell">
+            <img
+                src="https://tse2-mm.cn.bing.net/th/id/OIP.5DbXf-bgDV0EL3uwq1KjzQAAAA?w=271&h=45&c=7&o=5&dpr=1.25&pid=1.7">
+        </div>
+        <div style="width: 15vw;" class="header-cell header-menu">
+            <p>菜单</p>
+        </div>
+        <div style="width: 15vw;" class="header-cell header-menu">
+            <p>会员中心</p>
+        </div>
+        <div style="width: 10vw;" class="header-cell">
+
+        </div>
+        <a href="#" style="text-decoration: none; width: 20vw;background: red;color: white;font-size: 2rem"
+            class="header-cell">
+            立即点餐
+        </a>
+    </div>
+    <div class="main">
+        <div class="nav">
+            <ul>
+                <li>开工特惠</li><br>
+                <li>当季主打</li><br>
+                <li>牛排</li><br>
+                <li>一人食</li><br>
+                <li>超值套餐</li><br>
+                <li>经典比萨</li><br>
+                <li>大方比萨</li><br>
+                <li>精选饭面</li><br>
+                <li>人气小食</li><br>
+                <li>茶饮咖啡</li><br>
+                <li>沙拉/汤/甜品</li><br>
+                <li>超值下午茶</li><br>
+                <li>夜宵精选</li><br>
+                <li>沙拉&沙拉套餐</li><br>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="leixing">
+                <a href="#" class="i">i</a>类型
+                &nbsp&nbsp&nbsp&nbsp
+                <a href="#" class="buxian">不限</a>
+                <a href="#" class="leixingchicun">芝心</a>
+                <a href="#" class="leixingchicun">薄底</a>
+                <a href="#" class="leixingchicun">铁盘</a>
+                <a href="#" class="leixingchicun">二合一</a>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <a href="#" class="i">i</a>尺寸
+                &nbsp&nbsp&nbsp&nbsp
+                <a href="#" class="buxian">不限</a>
+                <a href="#" class="leixingchicun">小装</a>
+                <a href="#" class="leixingchicun">大装</a>
+                <a href="#" class="leixingchicun">普装</a>
+                <a href="#" class="leixingchicun">普通装</a>
+            </div>
+            <!--<br><br><br><br>-->
+            <div id=pisa1>
+                <div class="pisa">
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/23_3083.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>美式精选比萨</p>
+                            <p>
+                                <font color='#FF0000'>86.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12508.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>美式精选比萨</p>
+                            <p>
+                                <font color='#FF0000'>36.0元</font> /小装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12508.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>美式精选比萨</p>
+                            <p>
+                                <font color='#FF0000'>68.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12508.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>美式精选比萨</p>
+                            <p>
+                                <font color='#FF0000'>97.0元</font> /大装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12563.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>黄金夏威夷风光比萨</p>
+                            <p>
+                                <font color='#FF0000'>35.0元</font> /小装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pisa">
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12563.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>黄金夏威夷风光比萨</p>
+                            <p>
+                                <font color='#FF0000'>66.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12563.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>黄金夏威夷风光比萨</p>
+                            <p>
+                                <font color='#FF0000'>94.0元</font> /大装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/435_486280.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>黄金夏威夷风光比萨</p>
+                            <p>
+                                <font color='#FF0000'>84.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/3_348.JPG" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>超级至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>94.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/182_92288.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>超级至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>76.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/182_92288.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>超级至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>40.0元</font> /小装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/182_92288.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>超级至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>108.0元</font> /大装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/3_364.JPG" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>海鲜至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>98.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/72_12484.jpg" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>海鲜至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>44.0元</font> /小装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa-cell">
+                        <div class="pisa-cell-img">
+                            <img src="https://img.4008123123.com/resource/VersionP/phdi/3_365.JPG" height="170"
+                                width="170">
+                        </div>
+                        <div class="pisa-cell-desc">
+                            <p>海鲜至尊比萨</p>
+                            <p>
+                                <font color='#FF0000'>80.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

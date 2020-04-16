@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <style>
+        html {
+            font-size: 12px;
+            margin: 0px;
+            padding: 0px 10vw;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .header {
+            height: 8em;
+            display: table;
+        }
+
+        .header-cell {
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+            text-align: center;
+
+        }
+
+        .header-menu {
+            font-size: 2rem;
+        }
+
+        div.header-menu:hover {
+            cursor: pointer;
+            border-top: 5px solid red;
+            color: red;
+        }
+
+        .main {
+            height: calc(100vh - 8em);
+            display: table;
+        }
+
+        .nav {
+            display: table-cell;
+            width: 15em;
+            height: 100%;
+            background-color: #F9F6F0;
+        }
+
+        .content {
+            display: table-cell;
+            width: calc(80vw - 15em);
+            height: 100%;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px 0px;
+            width: 100%;
+        }
+
+
+        li {
+            list-style: none;
+            margin: 1.8rem 2rem;
+            font-size: 1.3rem;
+            text-align: right;
+        }
+
+        li:hover {
+            border-bottom: 1px solid red;
+            color: red;
+            cursor: pointer;
+        }
+
+        .button {
+            text-decoration: none;
+            background-color: lightseagreen;
+            border-radius: 5px;
+            padding: 0.9rem 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .zhonglei {
+            height: 5em;
+            width: 75em;
+            display: flex;
+
+        }
+
+        .zhonglei-cell {
+            display: flex;
+            border: 1px solid lightgrey;
+            width: 10rem;
+            height: 4.5rem;
+            margin: 0 10px;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: black;
+        }
+
+        div.zhonglei-cell:hover {
+            cursor: pointer;
+            background: red;
+            border-color: red;
+            color: white;
+        }
+
+        .zhonglei-i {
+            margin: 10px 5px;
+            font-size: 2rem;
+            display: flex;
+            width: 7rem;
+            height: 3rem;
+            border: 2px solid rgb(146, 255, 146);
+            border-radius: 50%;
+            justify-content: center;
+            color: rgb(146, 255, 146);
+        }
+
+        div.zhonglei-i:hover {
+            cursor: pointer;
+            color: white;
+            background: rgb(146, 255, 146);
+        }
+
+        .pisa1 {
+
+            width: 90rem;
+            height: 20rem;
+
+        }
+
+        .pisa1-cell {
+            position: relative;
+            float: left;
+            height: 30rem;
+            margin: 0;
+            width: 17.5rem;
+            border: 1px solid gainsboro;
+            cursor: pointer;
+        }
+
+        .pisa1-cell-img {
+            position: absolute;
+            top: 1rem;
+            left: 2.5rem;
+            right: 2.5rem;
+            bottom: 15rem;
+
+
+        }
+
+        .pisa1-cell-desc {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 4rem;
+            height: 6rem;
+            text-align: center;
+
+            font-size: 1.5rem;
+        }
+
+        .pisa1-cell-bnt {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3rem;
+            text-align: center;
+
+        }
+
+        .pisa1-cell:hover {
+            box-shadow: 0px 3px 3px 3px lightgrey;
+        }
+
+        .button {
+            text-decoration: none;
+            background-color: #11EE11;
+            border-radius: 5px;
+            padding: 5px 30px;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-cell" style="width: 20vw;">
+            <img src="./logo.png" alt="">
+        </div>
+        <div class="header-cell header-menu" style="width: 15vw; border-top: 5px solid red;
+        color: red;">
+            <p>菜单</p>
+        </div>
+        <div class="header-cell header-menu" style="width: 15vw;">
+            <p>会员中心</p>
+        </div>
+        <div class=" header-cell" style="width: 10vw;">
+        </div>
+        <a href="#" class="header-cell"
+            style="width: 20vw;text-decoration: none; background: red;color: white;font-size: 2rem;">
+            立即点餐
+        </a>
+    </div>
+    <div class="main">
+        <div class="nav">
+            <ul>
+                <li>特惠</li>
+                <li>当季主打</li>
+                <li>牛排</li>
+                <li>一人食</li>
+                <li>超值套餐</li>
+                <li>经典披萨</li>
+                <li>大方披萨</li>
+                <li>精选饭面</li>
+                <li>人气小食</li>
+                <li>茶饮咖啡</li>
+                <li>沙拉/汤/甜品</li>
+                <li>超值下午茶</li>
+            </ul>
+
+        </div>
+        <div class="content">
+            <div class="zhonglei">
+                <div class="zhonglei-i">
+                    i
+                </div>
+                <div style="font-size: 2rem;width: 10rem;align-items: center;
+                    justify-content: center; display: flex;text-align: center;  vertical-align: middle;">
+                    类型
+                </div>
+                <div class="zhonglei-cell">不限</div>
+                <div class="zhonglei-cell">芝心</div>
+                <div class="zhonglei-cell">铁盘</div>
+                <div class="zhonglei-cell">二合一</div>
+                <div style="width: 15em;"></div>
+                <div class="zhonglei-i">
+                    i
+                </div>
+                <div style="font-size: 2rem;width: 10rem;align-items: center;
+                    justify-content: center; display: flex;text-align: center;  vertical-align: middle;">
+                    尺寸
+                </div>
+                <div class="zhonglei-cell">不限</div>
+                <div class="zhonglei-cell">小装</div>
+                <div class="zhonglei-cell">大装</div>
+                <div class="zhonglei-cell">普通装</div>
+            </div>
+            <div id="pisa">
+                <div class="pisa1">
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./1.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>美式精选比萨
+                                <font color='#FF0000'>86.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./2.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>68.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./3.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>35.0元</font> /小装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./4.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>66.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./5.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>94.0元</font> /大装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pisa1">
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./6.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>84.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./7.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>94.0元</font> /普装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./8.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>76.0元</font> /普通装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./9.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>40.0元</font> /小装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                    <div class="pisa1-cell">
+                        <div class="pisa1-cell-img">
+                            <img src="./10.jpg" alt="">
+                        </div>
+                        <div class="pisa1-cell-desc">
+                            <p>
+                                <font color='#FF0000'>108.0元</font> /大装
+                            </p>
+                        </div>
+                        <div class="pisa1-cell-bnt">
+                            <a href="#" class="button">开始订餐</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

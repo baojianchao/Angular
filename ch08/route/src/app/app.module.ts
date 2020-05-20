@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ProductComponentComponent } from './product-component/product-component
 import { ExitComponentComponent } from './exit-component/exit-component.component';
 import { LoginGuard } from './login.guard';
 import { AuthService } from './auth.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 const mgtChildrenRoutes: Routes = [
@@ -27,7 +29,7 @@ const routes: Routes = [
   {
     path: 'management',
     component: ManagementComponentComponent,
-    children: mgtChildrenRoutes,
+    // children: mgtChildrenRoutes,
     canActivate: [LoginGuard]
   }
 ];
@@ -44,7 +46,10 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [LoginGuard, AuthService],
   bootstrap: [AppComponent]

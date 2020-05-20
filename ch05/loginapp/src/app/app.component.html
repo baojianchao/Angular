@@ -2,6 +2,7 @@
     <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
         <h3 class="d-flex justify-content-center">用户登录</h3>
         <p *ngIf="myForm.invalid" class="text-danger">表单无效！</p>
+        <!---->
         <p>{{name$ | async}}</p>
         <div class="form-group">
             <label for="userName">用户名</label>
